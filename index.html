@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        ROCK PAPER SCISSORS CHAMP 2000-2019
+    </header>
+    <H1>CHAMP</H1>
+    <P> Click the button to get beat in a Good<br> Ole fashion game of Rock, Paper, Scissors</P>
+    <button onclick="myFunction()">Rock, Paper, Scissors</button>
+
+    </button>
+    <script type="text/javascript">
+    function myFunction() {
+        var computerChoices = ["r", "p", "s"];
+        alert("Let\'s play a game of Rock, Paper, Scissors");
+        alert("Best of 3");
+
+
+        var wins = 0;
+        var loses = 0;
+        var ties = 0;
+
+        
+
+        for (var i = 0; i < 3; i++) {
+
+
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            var playerOptions = prompt("Enter R for Rock\nP for Paper\nS for Scissors\nTo play");
+            playerOptions = playerOptions.toLowerCase();
+
+            if (playerOptions === "r" || playerOptions === "p" || playerOptions === "s") {
+                alert("Computer choose " + computerGuess);
+
+                if ((playerOptions === "r" && computerGuess === "s") ||
+                    (playerOptions === "p" && computerGuess === "r") ||
+                    (playerOptions === "s" && computerGuess === "p")) {
+                    wins++;
+
+                   
+                        
+                        alert("You\'ve won " + wins + " times");
+                        alert("You\'re good, Let\'s play again!");
+                    }
+
+                    else if (playerOptions === computerGuess) {
+                        ties++;
+                        alert("You\'ve tied " + ties + " times");
+                        alert("Let\'s play again!");
+                    }
+
+                    else {
+                        loses++;
+                        alert("You\'ve lost " + loses + " times")
+                        alert("Let\'s play again!")
+
+
+
+                    }
+
+                    alert("Total Wins: " + wins + " \nTotal Loses: " + loses + " \nTotal Wins: " + ties)
+                }
+                console.log(computerGuess);
+
+            }}
+    </script>
+</body>
+
+</html>
