@@ -10,11 +10,11 @@
 
 <body>
     <header>
-        ROCK PAPER SCISSORS CHAMP 2000-2019
+        ROCK PAPER SCISSORS CHAMP 2020
     </header>
     <section>
-        <H1>CHAMP</H1>
-        <P> Click the button to get beat in a Good<br> Ole fashion game of Rock, Paper, Scissors</P>
+        <H1>THE CHAMP LIVES HERE</H1>
+        <P> Click The Button If You Want To Get Beat<br> In A Good Ole Fashion Game Of Rock, Paper, Scissors</P>
     </section>
 
     <section class="getWhooped">
@@ -24,10 +24,25 @@
         </button>
     </section>
     <script type="text/javascript">
+        var tries;
+
+        for (tries = 2; tries >= 0; tries--) {
+            let User = prompt("Enter your username:");
+            let Pass = prompt("Enter your password:");
+            if (User === "hello" && Pass === "world") {
+                alert("Welcome.");
+                break;
+            } else if (tries == 0) {
+                alert("You don't have any attempts left. Your account is now blocked");
+            } else {
+                alert("Incorrect username and/or password. You have " + tries + " attempt(s) left.");
+            }
+        }
         function myFunction() {
             var computerChoices = ["r", "p", "s"];
             alert("Let\'s play a game of Rock, Paper, Scissors");
-            alert("Best of 3");
+            alert("First To 3 Wins");
+            alert("I will keep score")
 
 
             var wins = 0;
@@ -36,7 +51,7 @@
 
 
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 10; i++) {
 
 
                 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -74,7 +89,14 @@
                     }
 
                     alert("Total Wins: " + wins + " \nTotal Loses: " + loses + " \nTotal Ties: " + ties)
+
                 }
+                var winstats = wins
+                var losestats = loses
+                if (winstats === 3 || losestats === 3) {
+                    { break; }
+                }
+
                 console.log(computerGuess);
 
             }
